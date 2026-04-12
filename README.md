@@ -42,3 +42,18 @@ run for running all linux commands
 entrypoint starting the command when the start of conatiner
 cmd[""] starting the command when the start of container 
 
+
+kubernetes:=--------------------------------------------------------->
+installing minikube 
+New-Item -Path 'c:\' -Name 'minikube' -ItemType Directory -Force
+$ProgressPreference = 'SilentlyContinue'; Invoke-WebRequest -OutFile 'c:\minikube\minikube.exe' -Uri 'https://github.com/kubernetes/minikube/releases/latest/download/minikube-windows-amd64.exe' -UseBasicParsing
+
+$oldPath = [Environment]::GetEnvironmentVariable('Path', [EnvironmentVariableTarget]::Machine)
+if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
+  [Environment]::SetEnvironmentVariable('Path', $('{0};C:\minikube' -f $oldPath), [EnvironmentVariableTarget]::Machine)
+}
+
+in ur terminal as run as adminstrator 
+if there is any issues 
+minikube start --no-vtx-check
+
