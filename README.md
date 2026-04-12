@@ -15,7 +15,7 @@ Docker commands
 9.docker push imagename:tag 
 10.docker ps -a /-l
 11.docker images
-12.docker build -t image:tagname
+12.docker build -t image:tagname dockerfilename  // building from the docker image
 13.docker-compose -f filename up
 14.docker rm container
 15.docker rmi imagename/id
