@@ -55,6 +55,7 @@ if ($oldPath.Split(';') -inotcontains 'C:\minikube'){
 
 in ur terminal as run as adminstrator 
 if there is any issues 
+minikube start --driver=hyperv
 minikube start --no-vtx-check
 minikube start
 minikube status
